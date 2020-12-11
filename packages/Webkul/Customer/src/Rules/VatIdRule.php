@@ -26,8 +26,7 @@ class VatIdRule implements Rule
     public function passes($attribute, $value)
     {
         $validator = new VatValidator();
-
-        return $validator->validate($value);
+	return empty($value) || $validator->validate($value);
     }
 
     /**
